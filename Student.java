@@ -1,13 +1,12 @@
 import java.util.HashMap;
 
-
 public class Student extends User{
     
     private int grade;
         /* using the Integer class not int for values because HashMaps need
             classes and objects not primatives 
         */
-    private HashMap<Integer><Book> books = new HashMap<Integer><Book>;
+    private HashMap<Integer, Book> books = new HashMap<Integer, Book>();
     private int readingLevel;
     private int MAX_BOOKS = 5;
     
@@ -30,17 +29,18 @@ public class Student extends User{
     //METHODS   
     // returns true if the book is added and false if the book is not added 
     public boolean checkOutBook(Book book){
-        if(books.size() >= MAX_BOOKS && book.readingLevel > this.readingLevel){
+        if(books.size() >= MAX_BOOKS &&
+            book.getReadingLevel() > this.readingLevel){
             return false;
         } else{
-            books.put(Integer(book.ISBN),book);
+            books.put((book.getISBN()),book);
             return true;
         }
     }
 
-    // returns true if the book was removed from the list and false if not 
-    public boolean returnBook(Book book){
-        return book.remove(Book.ISBN)
+    // removes book from the list 
+    public void returnBook(Book book){
+       books.remove(book.getISBN());
     }
 
 }
