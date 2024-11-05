@@ -9,6 +9,7 @@ public class Student extends User{
         */
     private HashMap<Integer><Book> books = new HashMap<Integer><Book>;
     private int readingLevel;
+    private int MAX_BOOKS = 5;
     
 
     //basic constructor
@@ -29,12 +30,17 @@ public class Student extends User{
     //METHODS   
     // returns true if the book is added and false if the book is not added 
     public boolean checkOutBook(Book book){
-        if(books.size() >= 5 && book.readingLevel > this.readingLevel){
+        if(books.size() >= MAX_BOOKS && book.readingLevel > this.readingLevel){
             return false;
         } else{
             books.put(Integer(book.ISBN),book);
             return true;
         }
+    }
+
+    // returns true if the book was removed from the list and false if not 
+    public boolean returnBook(Book book){
+        return book.remove(Book.ISBN)
     }
 
 }
