@@ -1,3 +1,4 @@
+package src;
 public class User {
 
     // basic information for a user 
