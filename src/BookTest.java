@@ -42,7 +42,6 @@ public class BookTest {
      * Tests the getReading Test method and the allocation of -1 to books with
      * no reading level added in construction 
      */
-
     @Test
     public void readingLevelTest(){
         Book a = new Book("Throne Of Glass", "Sarah .J Mass",
