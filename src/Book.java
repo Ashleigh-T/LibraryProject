@@ -11,12 +11,16 @@ public class Book{
     private String status;
     private LinkedList<Student> students;
 
+    //CONSTRUCTORS
+
     // most general constructor 
     public Book(String title, String author, int ISBN, int readingLevel){
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
         this.readingLevel = readingLevel;
+        this.status = "In";
+        this.students = new LinkedList<Student>();
     }
 
     // costructor where we havent evaluated the readingLevel 
@@ -35,7 +39,27 @@ public class Book{
         return this.ISBN;
     }
 
+    // returns "Out" if book is not in the library and "In" otherwise 
+    public String getStatus(){
+        return this.status;
+    }
 
+    // Changes status to "Out" and adds the student to the students Linked List
+    public void checkOut(Student student){
+        this.status = "Out";
+        this.students.addFirst(student);
+    }
+
+    // Changes status to "In"
+    public void returnBook(){
+        this.status = "In";
+    }
+
+    public LinkedList listOfStudents(){
+        return new LinkedList<Student>(this.students);
+    }
+
+    //OVERRIDES
 
     // Overridng the object .equals method to work for this specific class 
     @Override
