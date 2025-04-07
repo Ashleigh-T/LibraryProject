@@ -1,5 +1,7 @@
 package src;
 
+import java.util.LinkedList;
+
 public class Book{
 
     private String title;
@@ -7,7 +9,7 @@ public class Book{
     private int ISBN;
     private int readingLevel;
     private String status;
-    private Student student;
+    private LinkedList<Student> students;
 
     // most general constructor 
     public Book(String title, String author, int ISBN, int readingLevel){
