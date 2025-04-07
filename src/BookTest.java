@@ -2,6 +2,7 @@ package src;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import java.util.LinkedList;
 
 import org.junit.*;
 
@@ -83,5 +84,74 @@ public class BookTest {
         assertTrue(b.getISBN() == 456);
         
         assertTrue(a.getISBN() != b.getISBN());
+    }
+
+    @Test
+    public void checkOutAndReturnBookTest(){
+        Book a = new Book("Throne Of Glass", "Sarah .J Mass",
+        123, 6);
+
+        assertTrue(a.getStatus().equals("In"));
+
+        Student b = new Student(1,"Ashleigh","Taylor",
+                                 0, 12, 12);
+
+        a.checkOut(b);
+
+        assertTrue(a.getStatus().equals("Out"));
+
+        a.returnBook();
+
+        assertTrue(a.getStatus().equals("In"));
+
+    }
+
+    @Test
+    public void listOfStudents(){
+        Book a = new Book("Throne Of Glass", "Sarah .J Mass",
+                             123, 6);
+
+        Student b = new Student(1,"Ashleigh","Taylor",
+                                 0, 12, 12);
+
+        Student c = new Student(2,"Sarah","Taylor",
+                                 0, 12, 12);
+        
+        Student d = new Student(3,"Daniel","Taylor",
+                                 0, 12, 12);
+
+        a.checkOut(b);
+        a.returnBook();
+
+        a.checkOut(c);
+        a.returnBook();
+
+        a.checkOut(d);
+        a.returnBook();
+
+        assertTrue(a.listOfStudents().contains(b));
+        assertTrue(a.listOfStudents().contains(c));
+        assertTrue(a.listOfStudents().contains(d));
+    }
+
+    // Tests mutablility of object instance vars 
+    @Test
+    public void mutablitiyTest(){
+        Book a = new Book("Throne Of Glass", "Sarah .J Mass",
+                             123, 6);
+
+        Student b = new Student(1,"Ashleigh","Taylor",
+                                 0, 12, 12);
+
+        a.checkOut(b);
+
+        assertTrue(a.listOfStudents().contains(b));
+
+        LinkedList list = a.listOfStudents();
+
+        list.clear();
+
+        assertTrue(a.listOfStudents().contains(b));
+
     }
 }
