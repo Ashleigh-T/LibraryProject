@@ -35,4 +35,21 @@ public class Book{
 
 
 
+    // Overridng the object .equals method to work for this specific class 
+    @Override
+    public boolean equals(Object other){
+
+        if(!(other instanceof Book) ){
+            return false;
+        }
+
+        Book book = (Book)other;
+
+        return(title.equals(book.title) && author.equals(book.author) &&
+                ISBN == book.ISBN);
+
+    }
+
+
+
 }
