@@ -46,7 +46,7 @@ public class UserTest {
             User(1, "Ashleigh", "Taylor", 0);
 
         User b = new 
-            User(2,"Ashleigh","Taylor",2);
+            User(2,"Sarah","Taylor",2);
 
         assertTrue(a.getID() == 1);
         assertTrue(b.getID() == 2);
@@ -65,6 +65,48 @@ public class UserTest {
         assertTrue(a.getFN().equals("Ashleigh"));
         assertTrue(b.getFN().equals("Sarah"));
         assertFalse(a.getFN().equals(b.getFN()));
+
+    }
+
+    // tests getLN method 
+    @Test
+    public void testGetLN(){
+        User a = new 
+            User(1, "Ashleigh", "Taylor", 0);
+        User b = new 
+            User(2,"Sarah","Taylor",2);
+        User c = new 
+            User(3,"Jonas","Hosmer",0);
+
+        assertTrue(a.getLN().equals(b.getLN()));
+        assertFalse(a.getLN().equals(c.getLN()));
+        assertFalse(b.getLN().equals(c.getLN()));
+
+    }
+
+    // tests getAcess and changeAcess methods 
+    @Test
+    public void testGetAcess(){
+        User a = new 
+            User(1, "Ashleigh", "Taylor", 0);
+        User b = new 
+            User(2,"Sarah","Taylor",2);
+        User c = new 
+            User(3,"Jonas","Hosmer",1);
+        User d = new 
+            User(4,"Alec","Zazlav",1);
+
+        assertTrue(a.getAcess() == 0);
+        assertTrue(b.getAcess() == 2);
+        assertTrue(c.getAcess() == 1);
+        assertTrue(c.getAcess() == d.getAcess());
+
+        a.changeAcess(3);
+        c.changeAcess(3);
+
+        assertTrue(a.getAcess() == 3);
+        assertTrue(c.getAcess() == 3);
+        assertTrue(a.getAcess() == c.getAcess());
 
     }
 }
