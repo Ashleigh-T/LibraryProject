@@ -14,6 +14,8 @@ public class BookTest {
         Assert.assertEquals(1,1);
     }
 
+    // CONSTRUCTOR TESTS 
+
     //tests basic constructors and tests the .equals method
     @Test
     public void constructorTest(){
@@ -36,8 +38,14 @@ public class BookTest {
         assertFalse(a.equals(d));
         assertFalse(b.equals(d));
         assertFalse(c.equals(d));
+
+        Book e = new Book(a);
+
+        assertTrue(e.equals(a));
         
     }
+
+    // TESTS METHODS 
 
     /*
      * Tests the getReading Test method and the allocation of -1 to books with
