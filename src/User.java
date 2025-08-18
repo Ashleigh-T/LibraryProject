@@ -7,6 +7,7 @@ public class User {
     private String lastName;
     private int acess;
 
+    // CONSTRUCTORS
     // basic constructor 
     public User(int id, String firstName, String lastName, int acess){
         this.id = id;
@@ -16,12 +17,9 @@ public class User {
 
     }
 
-    //basic copy constructor 
+    // basic copy constructor 
     public User(User other){
-        this.id = other.id;
-        this.firstName = other.firstName;
-        this.lastName = other.lastName;
-        this.acess = other.acess;
+        this(other.id, other.firstName, other.lastName, other.acess);
     }
 
     // METHODS  
@@ -48,5 +46,22 @@ public class User {
     // Changes the acess of the current user 
     public void changeAcess(int newAcess){
         this.acess = newAcess;
+    }
+
+    // OVERRIDES
+
+    // Overridng the object .equals method to work for this specific class 
+    @Override
+    public boolean equals(Object other){
+
+        if(!(other instanceof User) ){
+            return false;
+        }
+
+        User user= (User)other;
+
+        return(id == user.id && firstName.equals(user.firstName) &&
+                lastName.equals(user.lastName));
+
     }
 }
