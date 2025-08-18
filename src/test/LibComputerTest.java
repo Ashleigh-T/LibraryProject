@@ -1,4 +1,4 @@
-package src;
+package src.test;
 
 import org.junit.*;
 

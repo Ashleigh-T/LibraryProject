@@ -1,10 +1,13 @@
-package src;
+package src.test;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import java.util.LinkedList;
 
 import org.junit.*;
+
+import src.Book;
+import src.Student;
 
 public class BookTest {
 

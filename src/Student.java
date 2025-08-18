@@ -1,5 +1,5 @@
 package src;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Student extends User{
     
@@ -7,7 +7,7 @@ public class Student extends User{
         /* using the Integer class not int for values because HashMaps need
             classes and objects not primatives 
         */
-    private HashMap<Integer, Book> books = new HashMap<Integer, Book>();
+    private ArrayList<Book> books;
     private int readingLevel;
     private int MAX_BOOKS = 5;
     
@@ -18,6 +18,7 @@ public class Student extends User{
         super(id,firstName,lastName,acess);
         this.grade = grade;
         this.readingLevel = readingLevel;
+        this.books = new ArrayList<Book>();
     }
 
     //basic copy constructor 
@@ -30,18 +31,18 @@ public class Student extends User{
     //METHODS   
     // returns true if the book is added and false if the book is not added 
     public boolean checkOutBook(Book book){
-        if(books.size() >= MAX_BOOKS &&
+        if(books.size() >= MAX_BOOKS ||
             book.getReadingLevel() > this.readingLevel){
             return false;
         } else{
-            books.put((book.getISBN()),book);
+            books.add(book);
             return true;
         }
     }
 
     // removes book from the list 
     public void returnBook(Book book){
-       books.remove(book.getISBN());
+       books.remove(book);
     }
 
 }
