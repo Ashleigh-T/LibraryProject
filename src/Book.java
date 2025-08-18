@@ -28,6 +28,11 @@ public class Book{
         this(title,author,ISBN, -1);
     }
 
+    // copy constructor 
+    public Book(Book other){
+        this(other.title, other.author, other.ISBN, other.readingLevel);
+    }
+
     //METHODS
     // returns the reading level of the book
     public int getReadingLevel(){
@@ -75,7 +80,5 @@ public class Book{
                 ISBN == book.ISBN);
 
     }
-
-
 
 }
