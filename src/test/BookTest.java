@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:src/test/BookTest.java
 package src.test;
-========
-package src.tests;
->>>>>>>> 372c6d7 (reorginized file structure):src/tests/BookTest.java
+
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
