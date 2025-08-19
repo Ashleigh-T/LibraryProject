@@ -1,0 +1,16 @@
+{
+  "java.test.config": [
+    {
+      "name": "JUnit Test",
+      "workingDirectory": "${workspaceFolder}"
+    }
+  ],
+  "java.test.defaultConfig": "JUnit Test",
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "junit-4.13.2.jar",
+    "hamcrest-core-1.3.jar",
+    "/Users/ashleightaylor/Desktop/**/*.jar"
+  ],
+  "java.dependency.packagePresentation": "hierarchical"
+}
