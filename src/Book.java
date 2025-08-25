@@ -1,6 +1,7 @@
 package src;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class Book{
 
@@ -20,7 +21,7 @@ public class Book{
         this.ISBN = ISBN;
         this.readingLevel = readingLevel;
         this.status = "In";
-        this.students = new LinkedList<Student>();
+        this.students = new LinkedList<>();
     }
 
     // costructor where we havent evaluated the readingLevel 
@@ -60,8 +61,8 @@ public class Book{
         this.status = "In";
     }
 
-    public LinkedList listOfStudents(){
-        return new LinkedList<Student>(this.students);
+    public LinkedList<Student> listOfStudents(){
+        return new LinkedList<>(this.students);
     }
 
     //OVERRIDES
