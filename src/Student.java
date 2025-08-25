@@ -4,9 +4,6 @@ import java.util.ArrayList;
 public class Student extends User{
     
     private int grade;
-        /* using the Integer class not int for values because HashMaps need
-            classes and objects not primatives 
-        */
     private ArrayList<Book> books;
     private int readingLevel;
     private int MAX_BOOKS = 5;
@@ -43,6 +40,33 @@ public class Student extends User{
     // removes book from the list 
     public void returnBook(Book book){
        books.remove(book);
+    }
+
+    // returns the ArrayList of books the student has checked out
+    public ArrayList<Book> getBooks(){
+        return new ArrayList<Book>(this.books);
+    }
+
+    // returns the grade of the student
+    public int getGrade(){
+        return this.grade;
+    }
+
+    // returns the reading level of the student
+    public int getReadingLevel(){
+        return this.readingLevel;   
+    }
+
+    // returns true if grade is changed and false if not
+    public boolean setGrade(int newGrade){
+        this.grade = newGrade;
+        return(this.grade == newGrade);
+    }
+
+    //returns true if reading level is changed and false if not
+    public boolean setReadingLevel(int newLevel){
+        this.readingLevel = newLevel;
+        return(this.readingLevel == newLevel);
     }
 
 }
