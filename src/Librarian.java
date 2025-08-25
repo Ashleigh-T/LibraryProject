@@ -1,4 +1,8 @@
 package src;
+
+import src.Student;
+import src.Book;
+
 public class Librarian extends User {
     
     // basic contrsuctor 
@@ -7,6 +11,10 @@ public class Librarian extends User {
     }
 
     //METHODS 
+
+    public boolean checkOut(Student student, Book book){
+        return(student.checkOutBook(book));
+    }
 
     
 
